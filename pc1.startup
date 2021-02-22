@@ -1,0 +1,5 @@
+#configuração ip
+dhclient -v eth0
+
+#configuração de roteamento
+route add default gw 10.0.1.1

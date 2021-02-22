@@ -1,0 +1,10 @@
+#configurações de ip
+ifconfig eth0 10.0.3.1/24
+ifconfig eth1 10.0.0.2/30
+ifconfig eth2 172.16.0.2/16
+
+#configurações de roteamento
+route add -net 10.0.1.0/24 gw 10.0.0.1
+
+#configuração de nat
+iptables -t nat -A POSTROUTING -s 10.0.0.0/30,10.0.3.0/24 -o eth2 -j MASQUERADE
